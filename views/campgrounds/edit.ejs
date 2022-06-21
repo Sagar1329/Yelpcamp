@@ -1,0 +1,48 @@
+<% layout("layouts/boilerplate") %>
+<h1 class="text-center">Edit Campground</h1>
+    <div class="col-6 offset-3">
+    <form action="/campground/edit/<%=camp.id%>?_method=PUT" method="POST" novalidate class="validated" enctype="multipart/form-data">
+        <div>
+            <label class="form-label" for="title">
+                Title
+            </label>
+            <input class="form-control" type="text" id="title" name="camground[title]" value="<%= camp.title %> "  required> 
+        </div>
+        
+        <div>
+            <label  class="form-label" for="location">
+                Location
+            </label>
+            <input class="form-control" type="text" id="location" name="camground[location]" value="<%= camp.location %> " required>
+        </div>
+      
+        <div>
+            <label class="form-label" for="Description">
+                Description
+            </label>
+            <input class="form-control" type="text" id="Description" name="camground[description]" value="<%= camp.description %> " required>
+        </div>
+        <div>
+            <label class="form-label" for="Image url">
+              Add Images
+            </label>
+            <input class="form-control" type="file" id="Image url" name="camground[image]" multiple   >
+        </div> 
+        <div class="mb-3">
+            <% camp.images.forEach(function(img,i){ %>
+                <img src="<%=img.thumbnail%>" class="img-thumbnail d-inline" >
+           <div class="form-check-inline">
+            <input type="checkbox" name="deleteImages[]" value="<%= img.filename %>" id="image-<%=i  %> ">
+            <label for="image-<%=i  %> ">Delete</label>
+           </div>
+                <% }) %> 
+        </div> 
+        <div>
+            <label class="form-label" for="price">
+                Price
+            </label>
+            <input class="form-control" type="number" id="price" name="camground[price]" value="<%= camp.price %>" required>
+        </div> <br>
+        <button  class="btn btn-success" type="submit">Update</button>
+                </form>
+            </div>

@@ -1,0 +1,64 @@
+<% layout("layouts/boilerplate") %>
+    <h1 class="text-center">New Campground</h1>
+ <div class="col-6 offset-3">
+    <form action="/campground/new" method="POST" novalidate class="validated" enctype="multipart/form-data">
+
+        <div>
+            <label class="form-label" for="title">
+                Title
+            </label>
+            <input class="form-control" type="text" id="title" name="camground[title]" required>
+            <div class="valid-feedback">
+                Nadiyuthe
+        </div>
+        </div>
+        <div>
+            <label  class="form-label" for="location">
+                Location
+            </label>
+            <input class="form-control" type="text" id="location" name="camground[location]" required>
+            <div class="valid-feedback">
+                Nadiyuthe
+        </div>
+        
+        </div>
+        
+        <div>
+            <label class="form-label" for="Description">
+                Description
+            </label>
+            <input class="form-control" type="text" id="Description" name="camground[description]" required>
+            <div class="valid-feedback">
+                Nadiyuthe
+        </div>
+        
+        </div>
+        <div>
+            
+            <div class="input-group mb-3 custom-file">
+                <input type="file" class="form-control " id="inputGroupFile02" name="camground[image]" multiple required>
+                <label class="input-group-text custom-file-label" for="inputGroupFile02">Upload</label>
+              </div>
+            <!-- <label class="form-label" for="Image url">
+                Image URL
+            </label> -->
+           
+            <div class="valid-feedback">
+                Nadiyuthe
+        </div>
+         <!-- <input class="form-control" type="text" id="Image url" name="camground[image]" value="https://source.unsplash.com/collection/483251" required > -->
+        </div> 
+        <div>
+            <label class="form-label" for="price">
+                Price
+            </label>
+            
+    <input class="form-control" type="number" id="price" name="camground[price]" required>
+    <div class="valid-feedback">
+        Nadiyuthe
+</div>
+    
+</div> <br>
+        <button  class="btn btn-success" type="submit">Add </button>
+                </form>
+ </div>
