@@ -139,11 +139,7 @@ app.use((req,res,next)=>{
 app.get('/',(req,res)=>{
     res.render('campgrounds/home')
 });
-app.get('/fakeUser',async(req,res)=>{
-    const user=new User({email:'coltttt@gmail.com',username:'colte'});
-    const newUser=await User.register(user,'chicken');
-    res.send(newUser);
-});
+
 app.use('/campground',camproutes);
 app.use('/campground/:id/reviews',reviewRoutes);
 app.use('/user',userRoutes);
